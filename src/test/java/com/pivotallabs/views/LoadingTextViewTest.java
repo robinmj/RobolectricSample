@@ -40,7 +40,7 @@ public class LoadingTextViewTest {
     }
 
     @Test
-    public void testStopLoadingAndSEtTextShouldSetTheTextOnTheTextView() {
+    public void testStopLoadingAndSetTextShouldSetTheTextOnTheTextView() {
         loadingTextView.stopLoadingAndSetText(R.string.unit_tests_ftw);
 
         assertThat((String) loadingTextTextView.getText(), equalTo("Unit Tests FTW!!!"));
