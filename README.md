@@ -17,7 +17,7 @@ Run the tests with Maven:
 
 For more information about how to get projects running in your IDE see:
 
-http://robolectric.org/getting_started/
+http://robolectric.org/
 
 
 ## Contributing
