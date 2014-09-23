@@ -1,3 +1,4 @@
+build/
 bin/
 gen/
 out/
@@ -25,3 +26,6 @@ tmp/
 target/
 .idea
 junk*
+.gradle
+app/build/
+app/testlibs/

@@ -1,0 +1,50 @@
+
+apply plugin: 'com.android.application'
+apply plugin: "robolectric"
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        applicationId "com.pivotallabs"
+        minSdkVersion 3
+        targetSdkVersion 16
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+// setup robolectric to use only files below a folder with name "robolectric"
+robolectric {
+    include "**/*Test.class"
+}
+
+dependencies {
+    compile fileTree(dir: "libs", include: ["*.jar"])
+    compile "org.roboguice:roboguice:2.0"
+
+    // use robolectric when testing
+    androidTestCompile("org.robolectric:robolectric:2.3") {
+        exclude module: "commons-logging"
+        exclude module: "httpclient"
+    }
+    androidTestCompile "junit:junit:4.11" // use junit 4 for testing
+
+    // add the stripped version of android.jar
+    androidTestCompile files("testlibs/android-17-stripped.jar")
+}
+
+// tell gradle to include robolectric test classes
+task copyTestClasses(type: Copy) {
+    from "build/test-classes"
+    into "build/intermediates/classes/debug"
+}
