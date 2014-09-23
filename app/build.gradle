@@ -1,10 +1,10 @@
 
 apply plugin: 'com.android.application'
-apply plugin: "robolectric"
+apply plugin: 'robolectric'
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
 
     defaultConfig {
         applicationId "com.pivotallabs"
@@ -23,14 +23,14 @@ android {
     }
 }
 
-// setup robolectric to use only files below a folder with name "robolectric"
+// setup robolectric to use only classes that end with "Test"
 robolectric {
     include "**/*Test.class"
 }
 
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "org.roboguice:roboguice:2.0"
+    compile "org.roboguice:roboguice:2.0" //some of the non-test classes require roboguice
 
     // use robolectric when testing
     androidTestCompile("org.robolectric:robolectric:2.3") {
@@ -40,7 +40,7 @@ dependencies {
     androidTestCompile "junit:junit:4.11" // use junit 4 for testing
 
     // add the stripped version of android.jar
-    androidTestCompile files("testlibs/android-17-stripped.jar")
+    androidTestCompile files("testlibs/android-20-stripped.jar")
 }
 
 // tell gradle to include robolectric test classes
