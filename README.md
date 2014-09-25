@@ -9,9 +9,9 @@ This fork of [RobolectricSample](https://github.com/robolectric/RobolectricSampl
     a. Use `VCS -> Checkout from Version Control -> Git` to clone this project. Set *Vcs Repository URL* to `git@github.com:robinmj/RobolectricSample.git`
     b. AndroidStudio will ask you if you want to open the build.gradle file. Choose *Yes*. This will open the `Import Project from Gradle` dialog. Make sure "Use default gradle wrapper" is selected, then click *Yes* again.
 
-### 2. Install android-20 ADK and Tools
+### 2. Install android-20 sdk and tools
 
-If you don't have the android-20 SDK and tools installed, you will see a "Failed to sync Gradle project" error message. You can then click "Install missing platform(s) and sync project" to fix this.
+If you don't have the android-20 sdk and tools installed, you will see a "Failed to sync Gradle project" error message. You can then click "Install missing platform(s) and sync project" to fix this.
  
 ### 3. Setup Task to compile and include test classes
 In Android Studio you need to add a new Run-Configuration.
