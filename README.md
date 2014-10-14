@@ -89,4 +89,4 @@ deleting: junit/runner/BaseTestRunner.class
 ```
 (note that `$ANDROID_HOME` points to the installation path of my Android SDK)
 
-Now you should be able to run and debug your tests from Android Studio by running the `Robolectric`-Configuration (infrequently this method fails to start up JUnit correctly and ends with an exception of a missing JUnit file. But on the second run it worked for me TM ;-) )
+Now you should be able to run and debug your tests from Android Studio by running the `Robolectric` Configuration (due to [this bug](https://code.google.com/p/android/issues/detail?id=70959) the test might fail on the first try, but should succeed on the second try )
